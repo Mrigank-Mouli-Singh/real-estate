@@ -66,7 +66,7 @@ export default function Navbar() {
                 ref={(el) => (itemsRef.current[index] = el)}
                 // INCREASED PADDING (px-10) here makes the pill wider on both sides
                 className={({ isActive }) =>
-                  `relative z-10 px-8 py-2 font-medium text-[24px] transition-colors duration-300 whitespace-nowrap ${
+                  `relative z-10 px-4 py-2 font-medium text-[24px] transition-colors duration-300 whitespace-nowrap ${
                     isActive ? "text-[#0047AB]" : "text-white hover:text-blue-100"
                   }`
                 }
