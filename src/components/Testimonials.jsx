@@ -7,7 +7,7 @@ const TESTIMONIALS = [
     id: '1',
     name: 'Vikram Seth',
     headline: '"Handled everything with precision and care."',
-    content: 'Amit Construction listened carefully to our needs and helped us make decisions that felt right, not rushed Found our dream home in record time. The search filters on Amit construction.',
+    content: 'Amit Construction listened carefully to our needs and helped us make decisions that felt right, not rushed Found our dream home in record time.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop'
   },
   {
@@ -21,7 +21,7 @@ const TESTIMONIALS = [
     id: '3',
     name: 'Rohan Mehra',
     headline: '"Professional, transparent, and reliable."',
-    content: 'Navigating the paperwork was the part I dreaded most, but the team made the entire closing process feel seamless. I always felt like I knew exactly where we stood.',
+    content: 'Navigating the paperwork was the part I dreaded most, but the team made the entire closing process feel seamless.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop'
   },
   {
@@ -36,7 +36,7 @@ const TESTIMONIALS = [
 
 const Testimonials = () => {
   return (
-    <div className="py-32 px-6   max-w-6xl mx-auto  flex items-center bg-white py-12 px-4 md:px-6">
+    <div className="py-32 px-6  max-w-6xl mx-auto  flex items-center bg-white py-12 px-4 md:px-6">
       <div className="w-full max-w-[1400px] mx-auto">
         {/* 
           Mobile: flex with horizontal scroll, snap-mandatory
@@ -55,3 +55,10 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+
+
+
+
+
+
