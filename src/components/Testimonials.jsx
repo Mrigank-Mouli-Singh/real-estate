@@ -34,29 +34,28 @@ const TESTIMONIALS = [
 ];
 
 
+
 const Testimonials = () => {
   return (
-    <div className="py-32 px-6  max-w-6xl mx-auto  flex items-center bg-white py-12 px-4 md:px-6">
-      <div className="w-full max-w-[1400px] mx-auto">
-        {/* 
-          Mobile: flex with horizontal scroll, snap-mandatory
-          Desktop: 4-column grid
-        */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 md:gap-10 no-scrollbar snap-x snap-mandatory px-4 md:px-0 scroll-smooth items-start">
-          {TESTIMONIALS.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
-          {/* Extra space for mobile scroll padding */}
-          <div className="min-w-[20px] md:hidden flex-shrink-0"></div>
-        </div>
+
+<div className="w-full py-16 px-4">
+  <div className="
+    flex flex-nowrap 
+    md:flex-wrap md:justify-center md:gap-8
+    overflow-x-auto snap-x snap-mandatory 
+    pb-4 -m-4 md:m-0 md:pb-0
+  ">
+    {TESTIMONIALS.map((testimonial, index) => (
+      <div key={index} className="flex-none px-4 md:px-0 snap-center">
+        <TestimonialCard testimonial={testimonial} />
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
-};
-
-export default Testimonials;
-
-
+ };
+ export default Testimonials;
 
 
 
