@@ -9,12 +9,10 @@ import Testimonials from "../components/Testimonials.jsx";
 const Service  = () => {
   return (
     <div className="min-h-screen bg-[#f8fcff]">
-      <Navbar />
       <Hero />
       <Services />
       <Process />
       <Testimonials />
-      <Footer />
     </div>
   );
 };
