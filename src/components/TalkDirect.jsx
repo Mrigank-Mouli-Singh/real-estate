@@ -1,4 +1,4 @@
-import house from "../assets/house.png";
+import house from "../assets/house.svg";
 
 export default function TalkDirect() {
   return (

@@ -1,4 +1,4 @@
-import mapImage from "../assets/map-image.png";
+import mapImage from "../assets/map-image.svg";
 
 export default function MapSection() {
   return (

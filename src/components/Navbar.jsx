@@ -85,7 +85,7 @@
 
 import { NavLink, useLocation } from "react-router-dom";
 import { useLayoutEffect, useState, useRef } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 
 export default function Navbar() {
   const location = useLocation();
