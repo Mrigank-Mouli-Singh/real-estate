@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-export default function About() {
-  return <div className="p-20 text-3xl">About Page</div>;
-}
-=======
 import AboutHero from "../components/about/AboutHero";
 import StorySection from "../components/about/StorySection";
 import MissionVision from "../components/about/MissionVision";
@@ -27,4 +22,3 @@ const About = () => {
 };
 
 export default About;
->>>>>>> upstream/master

@@ -8,7 +8,6 @@ import Testimonials from "../components/Testimonials.jsx";
 const Service = () => {
   return (
     <div className="min-h-screen bg-[#f8fcff] flex flex-col">
-      <Navbar />
 
       <main className="flex-grow">
         <Hero />
