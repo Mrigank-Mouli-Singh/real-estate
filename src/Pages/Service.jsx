@@ -5,14 +5,18 @@ import Process from "../components/Process.jsx";
 import Services from "../components/Services.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 
-
-const Service  = () => {
+const Service = () => {
   return (
-    <div className="min-h-screen bg-[#f8fcff]">
-      <Hero />
-      <Services />
-      <Process />
-      <Testimonials />
+    <div className="min-h-screen bg-[#f8fcff] flex flex-col">
+
+      <main className="flex-grow">
+        <Hero />
+        <Services />
+        <Process />
+        <Testimonials />
+      </main>
+
+      <Footer />
     </div>
   );
 };
