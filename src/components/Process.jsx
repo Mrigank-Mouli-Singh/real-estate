@@ -1,28 +1,41 @@
-
-
-const steps  = [
-  { number: 1, title: 'Consultation', text: 'We start with understanding your needs and preferences.' },
-  { number: 2, title: 'Property Search', text: 'Our experts find properties that match your criteria.' },
-  { number: 3, title: 'Site Visits', text: 'Schedule tours of your shortlisted properties.' },
-  { number: 4, title: 'Closing Deal', text: 'We handle all paperwork and finalize your transaction.' },
+const steps = [
+  {
+    number: 1,
+    title: "Consultation",
+    text: "We start with understanding your needs and preferences.",
+  },
+  {
+    number: 2,
+    title: "Property Search",
+    text: "Our experts find properties that match your criteria.",
+  },
+  {
+    number: 3,
+    title: "Site Visits",
+    text: "Schedule tours of your shortlisted properties.",
+  },
+  {
+    number: 4,
+    title: "Closing Deal",
+    text: "We handle all paperwork and finalize your transaction.",
+  },
 ];
 
 const Process = () => {
   return (
-    <section className="bg-[#E6F0FA] py-24 px-6 overflow-hidden flex items-center">
+    <section className="bg-[#E6F0FA] py-24 px-6 overflow-hidden flex items-end justify-center text-right">
       <div className="max-w-6xl mx-auto w-full">
         {/* Responsive Container */}
-        <div className="relative flex flex-col md:flex-row gap-24 md:gap-4 items-stretch md:items-start">
-          
+        <div className="relative flex flex-col items-end justify-end md:flex-row gap-30 md:gap-4 items-stretch md:items-start">
           {steps.map((step, idx) => {
             const isEven = idx % 2 === 0;
             const isLast = idx === steps.length - 1;
 
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`flex-1 relative group flex flex-col 
-                  ${isEven ? 'items-start text-left' : 'items-end text-right md:items-start md:text-left'}
+                  ${isEven ? "items-start text-left" : "items-end text-right md:items-start md:text-left"}
                   w-full
                 `}
               >
@@ -63,7 +76,9 @@ const Process = () => {
                 </div>
 
                 {/* Text Content */}
-                <div className={`relative z-20 w-full max-w-[280px] md:max-w-none ${!isEven && 'md:text-left'}`}>
+                <div
+                  className={`relative z-20 w-full max-w-[280px] md:max-w-none ${!isEven && "md:text-left"}`}
+                >
                   <h4 className="text-3xl md:text-2xl font-bold mb-3 text-slate-900  transition-colors">
                     {step.title}
                   </h4>
@@ -74,7 +89,6 @@ const Process = () => {
               </div>
             );
           })}
-
         </div>
       </div>
     </section>

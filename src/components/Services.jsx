@@ -4,7 +4,7 @@ import { ShoppingCart, Home, Key } from "lucide-react";
 
 const Services = () => {
   return (
-    <section className="py-20 px-6 pr-0 bg-white">
+    <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Buy Properties */}
         <div className="flex flex-col md:flex-row items-center gap-y-20 gap-50">
@@ -25,7 +25,7 @@ const Services = () => {
           </div>
 
           {/* ✅ Properly aligned right but left-structured checklist */}
-          <div className="flex-1 flex md:justify-end">
+          <div className="flex-1 flex md:justify-end ">
             <div className="w-full max-w-md">
               <ChecklistItem text="Personalized property recommendations" />
               <ChecklistItem text="Virtual and in person tour" />
@@ -36,7 +36,7 @@ const Services = () => {
         </div>
 
         {/* Sell Properties (unchanged) */}
-        <div className="flex flex-col md:flex-row-reverse items-center  gap-20">
+        <div className="flex flex-col md:flex-row-reverse items-center gap-20">
           <div className="flex-1">
             <div className="bg-white rounded-[40px] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-50">
               <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
@@ -78,7 +78,7 @@ const Services = () => {
           </div>
 
           {/* ✅ Properly aligned right but left-structured checklist */}
-          <div className="flex-1 flex md:justify-end">
+          <div className="flex-1 flex md:justify-end justify-center">
             <div className="w-full max-w-md">
               <ChecklistItem text="Residential and commercial construction" />
               <ChecklistItem text="Quality-controlled materials" />
