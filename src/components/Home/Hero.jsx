@@ -1,5 +1,5 @@
 
-import React from 'react';
+import HeroImage from "../../assets/homeimage/banner.svg";
 
 const Hero = () => {
   return (
@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')" }}
+        style={{ backgroundImage: `url(${HeroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#1E3A8A]/30"></div>
       </div>
@@ -19,7 +19,7 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
           Discover a curated collection of the world's most prestigious architectural masterpieces.
         </p>
-        <button className="bg-[#1E3A8A] hover:bg-[#1E3A8A]/90 text-white font-medium px-10 py-4 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-xl">
+        <button className="bg-[#265BA6] hover:bg-white text-white  hover:text-black font-medium px-10 py-4 rounded-full transition-all hover:scale-105 active:scale-95 shadow-xl">
           Contact now
         </button>
       </div>

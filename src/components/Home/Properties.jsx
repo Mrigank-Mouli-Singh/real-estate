@@ -1,6 +1,11 @@
 import React from 'react';
 import { Bed, Bath, Move, MapPin } from 'lucide-react';
 
+import home1 from "../../assets/homeimage/image55.svg";
+import home2 from "../../assets/homeimage/image59.svg";
+import home3 from "../../assets/homeimage/image60.svg";
+
+
 const PropertyCard = ({ 
   image, title, price, location, beds, baths, sqft, badge 
 }) => (
@@ -21,7 +26,7 @@ const PropertyCard = ({
     </div>
     <div className="p-6 md:p-8 flex-grow flex flex-col justify-between">
       <div>
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-[#1E3A8A] transition-colors line-clamp-1">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-[#1E3A8A] transition-colors line-clamp-1 ">
           {title}
         </h3>
         <div className="flex items-center justify-between mb-2 md:mb-4">
@@ -63,7 +68,7 @@ const PropertyCard = ({
 const Properties = () => {
   const properties = [
     {
-      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800',
+      image: home1,
       title: 'Modern Vintage Apartment',
       price: '₹1.4 Cr',
       location: 'Aya Nagar, New Delhi',
@@ -73,7 +78,7 @@ const Properties = () => {
       badge: 'FOR SALE'
     },
     {
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800',
+      image: home2,
       title: 'Luxurious Cottage House',
       price: '₹3.8 Cr',
       location: 'Whitefield, Bangalore',
@@ -83,7 +88,7 @@ const Properties = () => {
       badge: 'EXCLUSIVE'
     },
     {
-      image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=800',
+      image: home3,
       title: 'The Modern Aesthetic Estate',
       price: '₹2.7 Cr',
       location: 'Kochi, Kerala',
@@ -93,7 +98,7 @@ const Properties = () => {
       badge: 'NEW'
     },
     {
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800',
+      image: home1,
       title: 'Sunset Skyline Villa',
       price: '₹5.2 Cr',
       location: 'Gurugram, Haryana',
@@ -101,7 +106,30 @@ const Properties = () => {
       baths: 4,
       sqft: '4,100 Sqft',
       badge: 'PREMIUM'
+    },
+
+    {
+      image: home2,
+      title: 'Sunset Skyline Villa',
+      price: '₹4.2 Cr',
+      location: 'Gurugram, Haryana',
+      beds: 4,
+      baths: 4,
+      sqft: '4,100 Sqft',
+      badge: 'PREMIUM'
+    },
+
+    {
+      image: home3,
+      title: 'Sunset Skyline Villa',
+      price: '₹3.2 Cr',
+      location: 'Gurugram, Haryana',
+      beds: 4,
+      baths: 4,
+      sqft: '4,100 Sqft',
+      badge: 'PREMIUM'
     }
+
   ];
 
   return (

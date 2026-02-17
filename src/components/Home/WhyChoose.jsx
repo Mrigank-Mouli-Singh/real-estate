@@ -16,7 +16,7 @@ const WhyChoose = () => {
         <div className="flex-1 space-y-6 md:space-y-8">
           <div>
             <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-1">Why choose</h3>
-            <h2 className="text-3xl md:text-6xl font-bold text-[#1E3A8A] leading-tight">Amrit Constructions?</h2>
+            <h2 className="text-3xl md:text-6xl font-bold text-[#1E3A8A] leading-tight">Amit Constructions?</h2>
           </div>
           
           <ul className="space-y-3 md:space-y-4">

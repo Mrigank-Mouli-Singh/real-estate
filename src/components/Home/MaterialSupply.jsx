@@ -1,11 +1,17 @@
 
 import React from 'react';
+import image1 from "../../assets/homeimage/image88.svg";
+import image2 from "../../assets/homeimage/image89.svg";
+import image3 from "../../assets/homeimage/image90.svg";
+
+
+
 
 const MaterialSupply = () => {
   const images = [
-    { src: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800', alt: 'Concrete pouring' },
-    { src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800', alt: 'Heavy machinery' },
-    { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800', alt: 'Bricklaying' },
+    { src: image1, alt: 'Concrete pouring' },
+    { src: image2, alt: 'Heavy machinery' },
+    { src: image3, alt: 'Bricklaying' },
     { src: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800', alt: 'Construction Site' },
   ];
 

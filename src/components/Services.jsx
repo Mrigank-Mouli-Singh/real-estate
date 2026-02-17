@@ -7,7 +7,6 @@ import {
   
 } from 'lucide-react';
 
-
 const Services = () => {
   return (
 
@@ -38,8 +37,6 @@ const Services = () => {
          </div> 
 
 
-
- 
          <div className="flex flex-col md:flex-row-reverse items-center gap-20">
            <div className="flex-1">
              <div className="bg-white rounded-[40px] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-50">
