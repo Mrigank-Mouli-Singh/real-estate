@@ -44,15 +44,15 @@ const TeamSection = () => {
         </div>
 
         {/* TEAM GRID - Staggered Layout */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4 md:gap-16 items-start justify-items-center mt-10 md:mt-18">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-4 xl:gap-16 items-start justify-items-center mt-10 xl:mt-18">
           {team.map((member, index) => (
             <div
               key={index}
               className={`
                 relative
-                w-[183px] h-[303px] md:w-[302px] md:h-[500px] 
-                rounded-[60.5px] md:rounded-[100px] 
-                border-[1.2px] md:border-2 border-[#0047AB] 
+                w-full max-w-[183px] md:max-w-[280px] h-[303px] md:h-[464px] xl:w-[302px] xl:max-w-none xl:h-[500px] 
+                rounded-[60.5px] md:rounded-[92px] xl:rounded-[100px] 
+                border-[1.2px] xl:border-2 border-[#0047AB] 
                 shadow-[0px_4px_15px_0px_#0000001A]
                 ${
                   index === 0
@@ -60,30 +60,30 @@ const TeamSection = () => {
                     : index === 1
                       ? "bg-white"
                       : index === 2
-                        ? "bg-white md:bg-[#E6F0FA]"
-                        : "bg-[#E6F0FA] md:bg-white"
+                        ? "bg-white xl:bg-[#E6F0FA]"
+                        : "bg-[#E6F0FA] xl:bg-white"
                 } 
                 flex flex-col items-center 
-                pt-6 md:pt-10 overflow-hidden 
-                ${index === 1 || index === 3 ? "mt-16 md:mt-0" : ""}
+                pt-6 xl:pt-10 overflow-hidden 
+                ${index === 1 || index === 3 ? "mt-16" : ""}
                 ${index % 2 !== 0 ? "lg:mt-16" : ""}
               `}
             >
               {/* Top Content */}
-              <div className="z-10 px-2 md:px-4 space-y-1 md:space-y-2 text-center">
-                <h4 className="text-sm md:text-2xl font-manrope font-bold leading-none text-black text-center w-[150px] md:w-[250px] mx-auto">
+              <div className="z-10 px-2 xl:px-4 space-y-1 xl:space-y-2 text-center">
+                <h4 className="text-sm xl:text-2xl font-manrope font-bold leading-none text-black text-center w-[150px] xl:w-[250px] mx-auto">
                   {member.name}
                 </h4>
-                <p className="text-[11px] md:text-base font-manrope font-semibold leading-none text-black text-center w-[120px] md:w-[180px] mx-auto mt-2 md:mt-3.5">
+                <p className="text-[11px] xl:text-base font-manrope font-semibold leading-none text-black text-center w-[120px] xl:w-[180px] mx-auto mt-2 xl:mt-3.5">
                   {member.role}
                 </p>
-                <p className="text-[10px] md:text-base font-manrope font-medium leading-none text-[#00000080] text-center w-[175px] md:w-[259px] mx-auto mt-2 md:mt-3.5">
+                <p className="text-[10px] xl:text-base font-manrope font-medium leading-none text-[#00000080] text-center w-[175px] xl:w-[259px] mx-auto mt-2 xl:mt-3.5">
                   {member.experience}
                 </p>
               </div>
 
               {/* Bottom Image Container */}
-              <div className="absolute top-[121px] md:top-[199px] w-[183px] h-[183px] md:w-[302px] md:h-[302px] rounded-[60.5px] md:rounded-[100px] overflow-hidden">
+              <div className="absolute top-[121px] md:top-[184px] xl:top-[199px] w-[183px] h-[183px] md:w-[280px] md:h-[280px] xl:w-[302px] xl:h-[302px] rounded-[60.5px] md:rounded-[92px] xl:rounded-[100px] overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}

@@ -1,7 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 
+import About from "./Pages/About";
+import Service from "./Pages/Service";
 import Navbar from "./components/Navbar";
 import Footer from "./components/common/Footer";
+import Home from "./Pages/Home";
+
 
 import Contact from "./pages/Contact";
 import Service from "./Pages/Service.jsx";
@@ -19,6 +23,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Service />} />
+          <Route path="/home" element={<Home />} />
+
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

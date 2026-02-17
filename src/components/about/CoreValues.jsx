@@ -41,7 +41,7 @@ const CoreValues = () => {
           {values.map((value, index) => (
             <div
               key={index}
-              className="w-[170px] h-[159px] md:w-[302px] md:h-[264px] bg-white rounded-[10px] border-2 border-[#60A5FA] hover:border-[#265BA6] hover:bg-[#60A5FA1A] shadow-[0px_4px_30px_0px_#60A5FA4D] flex flex-col items-center transition-all duration-300 group px-2 md:px-4"
+              className="w-full h-[159px] md:w-[302px] md:h-[264px] bg-white rounded-[10px] border-2 border-[#60A5FA] hover:border-[#265BA6] hover:bg-[#60A5FA1A] shadow-[0px_4px_30px_0px_#60A5FA4D] flex flex-col items-center transition-all duration-300 group px-2 md:px-4"
             >
               <div className="w-[45px] h-[45px] md:w-[80px] md:h-[80px] flex items-center justify-center mt-3 md:mt-5 mb-1.5 md:mb-[6.4px] rounded-full">
                 <img
