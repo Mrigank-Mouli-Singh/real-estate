@@ -4,19 +4,15 @@ export default function OfficeHours() {
       className="
         w-full 
         
-        /* Width & Alignment: Portrait -> Landscape -> Desktop */
-        max-w-[380px] 
-        landscape:max-w-[540px] 
-        lg:max-w-[628px] 
-        
-        landscape:mx-auto 
-        lg:mx-0
+        /* ✅ Horizontal size now matches MapSection */
+        max-w-[628px]
+        mx-auto
         
         /* Height: Portrait -> Landscape -> Desktop */
         h-[129px] 
         landscape:h-[180px] 
-        lg:h-[228px]   /* ✅ Updated from 215px → 228px */
-        
+        lg:h-[228px]
+
         /* Radius & Styling */
         rounded-[16px] 
         lg:rounded-[20px] 
@@ -33,7 +29,7 @@ export default function OfficeHours() {
         pl-[16px] 
         
         landscape:p-[20px] 
-        lg:p-[24px]   /* ✅ Matches Figma */
+        lg:p-[24px]
         
         transition-all duration-300
       "

@@ -1,161 +1,238 @@
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+
 export default function ContactForm() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedSubject, setSelectedSubject] = useState("");
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phoneNumber: "",
+    emailAddress: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  const subjects = [
+    { label: "Buy property", value: "buy" },
+    { label: "Sell property", value: "sell" },
+    { label: "Construction materials", value: "materials" },
+    { label: "Consultation", value: "consultation" },
+    { label: "Others", value: "others" },
+  ];
+
+  // Auto-select subject from URL
+  useEffect(() => {
+    const subjectFromUrl = searchParams.get("subject");
+
+    if (subjectFromUrl) {
+      const matchedSubject = subjects.find(
+        (item) => item.value === subjectFromUrl
+      );
+
+      if (matchedSubject) {
+        setSelectedSubject(matchedSubject.label);
+        setFormData((prev) => ({
+          ...prev,
+          subject: matchedSubject.value,
+        }));
+
+        const formElement = document.getElementById("contact-form");
+        if (formElement) {
+          formElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    }
+  }, [searchParams]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://backendrealestate-nine.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Submission failed");
+      }
+
+      alert("Message sent successfully!");
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        phoneNumber: "",
+        emailAddress: "",
+        subject: "",
+        message: "",
+      });
+
+      setSelectedSubject("");
+
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("Failed to send message.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center w-full px-4">
-      
-      {/* SECTION TITLE */}
-      <h2 className="font-medium text-[20px] lg:text-[40px] leading-[100%] text-black mb-6 text-center">
+    <div id="contact-form" className="flex flex-col items-center w-full px-4">
+      <h2 className="font-medium text-[20px] lg:text-[40px] text-black mb-6 text-center">
         Send Us a Message
       </h2>
 
-      {/* FORM CARD */}
-      <div className="w-full max-w-[380px] lg:max-w-[628px] bg-[#E6F0FA] lg:bg-[#EAF4FF] rounded-[16px] lg:rounded-[20px] p-6 lg:p-8 shadow-[0px_10px_30px_rgba(38,91,166,0.15)]">
-        
-        <div className="flex flex-col gap-4 lg:gap-6">
+      <div className="w-full max-w-[628px] bg-[#EAF4FF] rounded-[20px] p-8 shadow-[0px_10px_30px_rgba(38,91,166,0.15)]">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
-          {/* INPUT FIELDS */}
-          {[
-            { label: "Full Name", type: "text", placeholder: "Riya Sharma" },
-            { label: "Email Address", type: "email", placeholder: "Riya@example.com" },
-            { label: "Phone Number", type: "tel", placeholder: "+91 9999999999" },
-          ].map((field) => (
-            <div key={field.label}>
-              <label className="font-medium text-[18px] lg:text-[24px] leading-[100%] text-black mb-2 lg:mb-3 block">
-                {field.label}
-              </label>
-
-              <input
-                type={field.type}
-                placeholder={field.placeholder}
-                className="
-                  w-full h-[40px] lg:h-[65px]
-                  rounded-full px-6
-                  bg-white
-                  outline-none
-                  text-[16px] lg:text-[18px]
-                  placeholder:text-[#C6C6C6]
-                  shadow-[0px_4px_20px_rgba(96,165,250,0.10)]
-                  focus:shadow-[0px_4px_25px_rgba(38,91,166,0.20)]
-                  transition-all duration-300
-                "
-              />
-            </div>
-          ))}
-
-          {/* SUBJECT */}
+          {/* Full Name */}
           <div>
-            <label className="font-medium text-[18px] lg:text-[24px] leading-[100%] text-black mb-2 lg:mb-3 block">
+            <label className="font-medium text-[20px] mb-3 block">
+              Full Name
+            </label>
+            <input
+              type="text"
+              required
+              value={formData.fullName}
+              onChange={(e) =>
+                setFormData({ ...formData, fullName: e.target.value })
+              }
+              placeholder="Riya Sharma"
+              className="w-full h-[60px] rounded-full px-6 bg-white outline-none"
+            />
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="font-medium text-[20px] mb-3 block">
+              Email Address
+            </label>
+            <input
+              type="email"
+              required
+              value={formData.emailAddress}
+              onChange={(e) =>
+                setFormData({ ...formData, emailAddress: e.target.value })
+              }
+              placeholder="riya@example.com"
+              className="w-full h-[60px] rounded-full px-6 bg-white outline-none"
+            />
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="font-medium text-[20px] mb-3 block">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              required
+              value={formData.phoneNumber}
+              onChange={(e) =>
+                setFormData({ ...formData, phoneNumber: e.target.value })
+              }
+              placeholder="+91 9999999999"
+              className="w-full h-[60px] rounded-full px-6 bg-white outline-none"
+            />
+          </div>
+
+          {/* Subject Dropdown */}
+          <div className="relative">
+            <label className="font-medium text-[20px] mb-3 block">
               Subject
             </label>
 
-            <div className="relative">
-              <select
-                className="
-                  w-full h-[40px] lg:h-[65px]
-                  rounded-full px-6
-                  bg-white
-                  outline-none
-                  text-[16px] lg:text-[18px]
-                  text-[#C6C6C6]
-                  appearance-none
-                  shadow-[0px_4px_20px_rgba(96,165,250,0.10)]
-                  focus:shadow-[0px_4px_25px_rgba(38,91,166,0.20)]
-                  transition-all duration-300
-                  cursor-pointer
-                "
-                defaultValue=""
-              >
-                <option value="" disabled>Select Subject</option>
-                <option value="buy">Buy property</option>
-                <option value="sell">Sell property</option>
-                <option value="materials">Construction materials</option>
-                <option value="consultation">Consultation</option>
-                <option value="others">Others</option>
-              </select>
+            <div
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex items-center justify-between w-full h-[60px] rounded-full px-6 bg-white cursor-pointer"
+            >
+              <span className={selectedSubject ? "text-black" : "text-gray-400"}>
+                {selectedSubject || "Select Subject"}
+              </span>
 
-              {/* Custom Dropdown Arrow */}
-              <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
-                <svg
-                  className="w-4 h-4 lg:w-5 lg:h-5 text-[#C6C6C6]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
+              <svg
+                className={`w-4 h-4 transition-transform ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
+
+            {isOpen && (
+              <div className="absolute z-50 w-full mt-2 bg-white rounded-[20px] shadow-xl">
+                {subjects.map((item) => (
+                  <div
+                    key={item.value}
+                    className="px-6 py-3 cursor-pointer hover:bg-gray-100"
+                    onClick={() => {
+                      setSelectedSubject(item.label);
+                      setFormData({
+                        ...formData,
+                        subject: item.value,
+                      });
+                      setIsOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* MESSAGE */}
+          {/* Message */}
           <div>
-            <label className="font-medium text-[18px] lg:text-[24px] leading-[100%] text-black mb-2 lg:mb-3 block">
+            <label className="font-medium text-[20px] mb-3 block">
               Message
             </label>
-
             <textarea
+              required
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               placeholder="Tell us how we can help you"
-              className="
-                w-full h-[40px] lg:h-[65px]
-                rounded-[20px] lg:rounded-[30px]
-                px-6 py-4
-                bg-white
-                outline-none
-                resize-none
-                text-[16px] lg:text-[18px]
-                placeholder:text-[#C6C6C6]
-                shadow-[0px_4px_20px_rgba(96,165,250,0.10)]
-                focus:shadow-[0px_4px_25px_rgba(38,91,166,0.20)]
-                transition-all duration-300
-              "
+              className="w-full h-[120px] rounded-[20px] px-6 py-4 bg-white outline-none resize-none"
             />
           </div>
 
-          {/* SEND MESSAGE BUTTON */}
+          {/* Submit Button */}
           <button
-            className="
-              group relative
-              w-full h-[50px] lg:h-[79px]
-              mt-2 rounded-full
-              font-medium text-[18px] lg:text-[20px]
-              overflow-hidden
-              bg-[#265BA6] text-white
-              shadow-[0px_4px_30px_rgba(0,0,0,0.25)]
-              transition-all duration-300 ease-in-out
-              border border-transparent
-              hover:bg-white
-              hover:text-[#265BA6]
-              hover:border-[#265BA6]
-              hover:shadow-[0px_6px_25px_rgba(38,91,166,0.30)]
-              hover:scale-105
-              active:bg-[#ffffff]
-              active:text-[#265BA6]
-              active:scale-95
-              active:shadow-inner
-            "
+            type="submit"
+            disabled={loading}
+            className="w-full h-[70px] mt-2 rounded-full font-medium text-[20px] bg-[#265BA6] text-white"
           >
-            <span className="relative z-10">
-              Send Message
-            </span>
-
-            {/* Glow Layer */}
-            <span
-              className="
-                absolute inset-0
-                bg-white
-                opacity-0
-                group-hover:opacity-10
-                group-active:opacity-10
-                transition duration-300
-              "
-            />
+            {loading ? "Sending..." : "Send Message"}
           </button>
 
-        </div>
+        </form>
       </div>
     </div>
   );
