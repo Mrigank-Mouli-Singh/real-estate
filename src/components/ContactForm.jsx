@@ -42,7 +42,6 @@
 //   }
 // }, [searchParams]);
 
-
 //   return (
 //     <div id="contact-form" className="flex flex-col items-center w-full px-4">
 //       <h2 className="font-medium text-[20px] lg:text-[40px] leading-[100%] text-black mb-6 text-center">
@@ -150,25 +149,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // API Integration :-
 
 import { useState, useEffect } from "react";
@@ -207,7 +187,7 @@ export default function ContactForm() {
 
     if (subjectFromUrl) {
       const matchedSubject = subjects.find(
-        (item) => item.value === subjectFromUrl
+        (item) => item.value === subjectFromUrl,
       );
 
       if (matchedSubject) {
@@ -235,16 +215,13 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      await fetch(
-        "https://backendrealestate-nine.vercel.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      await fetch("https://backendrealestate-nine.vercel.app/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       // reset after success
       setFormData({
@@ -272,10 +249,8 @@ export default function ContactForm() {
       </h2>
 
       <div className="w-full max-w-[380px] lg:max-w-[628px] bg-[#E6F0FA] lg:bg-[#EAF4FF] rounded-[16px] lg:rounded-[20px] p-6 lg:p-8 shadow-[0px_10px_30px_rgba(38,91,166,0.15)]">
-        
         {/* 🔥 Wrapped in form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:gap-6">
-
           {/* INPUT FIELDS */}
           <div>
             <label className="font-medium text-[18px] lg:text-[24px] mb-2 lg:mb-3 block">
@@ -332,9 +307,28 @@ export default function ContactForm() {
               onClick={() => setIsOpen(!isOpen)}
               className="flex items-center justify-between w-full h-[40px] lg:h-[65px] rounded-full px-6 bg-white cursor-pointer"
             >
-              <span className={selectedSubject ? "text-black" : "text-[#C6C6C6]"}>
+              <span
+                className={selectedSubject ? "text-black" : "text-[#C6C6C6]"}
+              >
                 {selectedSubject || "Select Subject"}
               </span>
+
+              {/* Arrow Icon */}
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
 
             {isOpen && (
@@ -384,7 +378,6 @@ export default function ContactForm() {
               {loading ? "Sending..." : "Send Message"}
             </span>
           </button>
-
         </form>
       </div>
     </div>
