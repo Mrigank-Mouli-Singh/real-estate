@@ -4,7 +4,7 @@ import TalkDirect from "../components/TalkDirect";
 
 export default function Contact() {
   return (
-    <main className="bg-[#F8FAFC] min-h-screen">
+    <main className="bg-[#F8FAFC] min-h-screen pt-20">
       <ContactHero />
       <ContactSection />
       <TalkDirect />

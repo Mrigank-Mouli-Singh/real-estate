@@ -19,7 +19,7 @@
 
 //     // Safety check: Fixes the 'undefined' error from your previous terminal logs
 //     const activeElement = itemsRef.current?.[activeIndex];
-    
+
 //     if (activeElement) {
 //       setPillStyle({
 //         left: activeElement.offsetLeft,
@@ -30,24 +30,24 @@
 
 //   return (
 //     <div className="w-full flex justify-center pt-3 lg:pt-6 px-4 lg:px-0 font-['Manrope']">
-//       <nav 
+//       <nav
 //         className="relative w-full lg:w-[1280px] h-[45px] lg:h-[80px] bg-[#265BA6] rounded-full flex items-center px-3 lg:px-10 shadow-[0px_4px_30px_rgba(96,165,250,0.5)]"
 //         style={{ backdropFilter: 'blur(20px)' }}
 //       >
-        
+
 //         {/* LOGO SECTION */}
 //         <div className="w-auto lg:w-[250px] flex-shrink-0">
-//           <img 
-//             src="/images/logo.png" 
-//             alt="Amit Construction" 
-//             className="h-[20px] lg:h-[50px] w-auto object-contain" 
+//           <img
+//             src="/images/logo.png"
+//             alt="Amit Construction"
+//             className="h-[20px] lg:h-[50px] w-auto object-contain"
 //           />
 //         </div>
 
 //         {/* NAV GROUP - Centered on desktop, justified on mobile */}
 //         <div className="flex-grow flex justify-end lg:justify-center">
 //           <div className="relative flex items-center justify-between gap-1 lg:gap-0 w-full max-w-[280px] lg:w-[609px]">
-            
+
 //             {/* SLIDING WHITE PILL - Height scales down for mobile */}
 //             <div
 //               className="absolute h-[30px] lg:h-[52px] bg-white rounded-full transition-all duration-300 ease-in-out"
@@ -105,7 +105,7 @@ export default function Navbar() {
   useLayoutEffect(() => {
     const updatePillPosition = () => {
       const index = navItems.findIndex(
-        (item) => item.path === location.pathname
+        (item) => item.path === location.pathname,
       );
 
       const activeIndex = index === -1 ? 0 : index;
@@ -128,7 +128,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
-    <div className="w-full flex justify-center pt-4 px-4">
+    <div className="w-full fixed top-0 left-0 right-0 z-50 flex justify-center py-2 lg:py-3 px-4">
       <nav
         className="relative w-full lg:w-[1280px]
                    h-[45px] lg:h-[80px]

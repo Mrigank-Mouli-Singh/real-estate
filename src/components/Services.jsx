@@ -24,26 +24,11 @@ const Services = () => {
             </div>
           </div>
 
-         <div className="flex flex-col md:flex-row-reverse items-center gap-20">
-           <div className="flex-1">
-             <div className="bg-white rounded-[40px] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-50">
-               <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
-                 <Home className="w-8 h-8 text-[#2b67cc]" />
-               </div>
-         <h3 className="font-manrope font-semibold text-3xl leading-none text-[#265BA6] mb-6">
-           Sell Properties
-          </h3>              
-          <p className="text-slate-500 leading-relaxed text-lg">
-                 Sell your property with the right pricing, visibility, and guidance to achieve its true market value. Our strategy ensures quick turnover.
-               </p>
-             </div>
-           </div>
-           <div className="flex-1">
-             <ChecklistItem text="Free property valuation" />
-             <ChecklistItem text="Professional photography of properties" />           <ChecklistItem text="Multi-channel marketing support" />
-          {/* ✅ Properly aligned right but left-structured checklist */}
-          <div className="flex-1 flex md:justify-end ">
+          <div className="flex-1 flex md:justify-end justify-center">
             <div className="w-full max-w-md">
+              <ChecklistItem text="Free property valuation" />
+              <ChecklistItem text="Professional photography of properties" />
+              <ChecklistItem text="Multi-channel marketing support" />
               <ChecklistItem text="Personalized property recommendations" />
               <ChecklistItem text="Virtual and in person tour" />
               <ChecklistItem text="Negotiation support" />
@@ -52,8 +37,8 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Sell Properties (unchanged) */}
-        <div className="flex flex-col md:flex-row-reverse items-center gap-20">
+        {/* Sell Properties */}
+        <div className="flex flex-col md:flex-row-reverse items-center gap-y-20 gap-50">
           <div className="flex-1">
             <div className="bg-white rounded-[40px] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-50">
               <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
@@ -69,11 +54,13 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="flex-1">
-            <ChecklistItem text="Free property valuation" />
-            <ChecklistItem text="Professional photography of properties" />
-            <ChecklistItem text="Multi-channel marketing support" />
-            <ChecklistItem text="Quick and efficient closing" />
+          <div className="flex-1 flex md:justify-start justify-center">
+            <div className="w-full max-w-md">
+              <ChecklistItem text="Free property valuation" />
+              <ChecklistItem text="Professional photography of properties" />
+              <ChecklistItem text="Multi-channel marketing support" />
+              <ChecklistItem text="Quick and efficient closing" />
+            </div>
           </div>
         </div>
 

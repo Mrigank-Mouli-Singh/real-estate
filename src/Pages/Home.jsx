@@ -1,21 +1,18 @@
-
-import Navbar from '../components/Navbar.jsx';
-import Hero from '../components/Home/Hero.jsx';
-import Properties from '../components/Home/Properties.jsx';
-import Stats from '../components/Home/Stats.jsx';
-import MaterialSupply from '../components/Home/MaterialSupply.jsx';
-import WhyChoose from '../components/Home/WhyChoose.jsx';
-import Footer from '../components/Footer.jsx';
+import Hero from "../components/Home/Hero.jsx";
+import Properties from "../components/Home/Properties.jsx";
+import Stats from "../components/Home/Stats.jsx";
+import MaterialSupply from "../components/Home/MaterialSupply.jsx";
+import WhyChoose from "../components/Home/WhyChoose.jsx";
 
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FCFF]">
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="flex-grow">
         <section id="home">
           <Hero />
         </section>
-        
+
         <section id="properties" className="py-16 md:py-24">
           <Properties />
         </section>
@@ -32,7 +29,6 @@ const Home = () => {
           <WhyChoose />
         </section>
       </main>
-      
     </div>
   );
 };

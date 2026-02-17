@@ -7,7 +7,7 @@ import Testimonials from "../components/Testimonials.jsx";
 const Service = () => {
   return (
     <div className="min-h-screen bg-[#f8fcff] flex flex-col">
-      <main className="flex-grow">
+      <main className="flex-grow md:pt-25 pt-18">
         <Hero />
         <Services />
         <Process />
