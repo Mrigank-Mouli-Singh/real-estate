@@ -23,7 +23,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="bg-[#E6F0FA] py-24 px-6 overflow-hidden flex items-end justify-center text-right">
+    <section className="bg-[#E6F0FA] py-15 px-6 overflow-hidden flex items-end justify-center text-right">
       <div className="max-w-6xl mx-auto w-full">
         {/* Responsive Container */}
         <div className="relative flex flex-col items-end justify-end md:flex-row gap-30 md:gap-4 items-stretch md:items-start">

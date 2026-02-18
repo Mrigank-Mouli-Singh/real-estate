@@ -13,11 +13,11 @@ const Home = () => {
           <Hero />
         </section>
 
-        <section id="properties" className="py-16 md:py-24">
+        <section id="properties" className="py-8 pb-2 md:py-18">
           <Properties />
         </section>
 
-        <section id="stats" className="py-12">
+        <section id="stats" className="">
           <Stats />
         </section>
 
@@ -25,7 +25,7 @@ const Home = () => {
           <MaterialSupply />
         </section>
 
-        <section id="about" className="py-16 md:py-24">
+        <section id="about" className="py-10 pt-0 md:py-0 md:pb-20">
           <WhyChoose />
         </section>
       </main>
