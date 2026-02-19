@@ -4,7 +4,7 @@ import house from "../assets/house.svg";
 export default function TalkDirect() {
   const [showModal, setShowModal] = useState(false);
   const [copied, setCopied] = useState(false);
-  
+
   const phoneNumber = "+91 9999999999";
 
   const handleCopy = async () => {
@@ -41,11 +41,11 @@ export default function TalkDirect() {
           </h2>
 
           <p className="font-manrope font-medium text-[12px] lg:text-[24px] leading-[130%] lg:leading-[140%] text-black/50 mb-3 lg:mb-10 max-w-[196px] sm:max-w-[320px] lg:max-w-[569px]">
-            Our team is available to answer your questions and provide personalized assistance
+            Our team is available to answer your questions and provide
+            personalized assistance
           </p>
 
           <div className="flex items-center gap-2 lg:gap-6">
-            
             {/* CALL US BUTTON - Triggering the Modal */}
             <button
               onClick={() => setShowModal(true)}
@@ -99,7 +99,6 @@ export default function TalkDirect() {
             >
               Chat with us
             </button>
-
           </div>
         </div>
 
@@ -124,12 +123,12 @@ export default function TalkDirect() {
       {/* POPUP MODAL */}
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-          <div 
+          <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             onClick={() => setShowModal(false)}
           />
           <div className="relative bg-white w-full max-w-[400px] rounded-[24px] lg:rounded-[32px] p-8 shadow-2xl">
-            <button 
+            <button
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-black"
             >
@@ -137,33 +136,77 @@ export default function TalkDirect() {
             </button>
 
             <div className="text-center">
-              <h3 className="text-[20px] lg:text-[24px] font-semibold text-black mb-2">Our Contact Number</h3>
-              <p className="text-gray-500 mb-6 text-sm lg:text-base">Click the icon to copy or use the button to call directly.</p>
-              
-              <div className="flex items-center justify-between bg-[#F0F7FF] rounded-full px-6 py-4 border border-[#265BA6]/10">
+              <h3 className="text-[20px] lg:text-[24px] font-semibold text-black mb-2">
+                Our Contact Number
+              </h3>
+              <p className="text-gray-500 mb-6 text-sm lg:text-base">
+                Click the icon to copy or use the button to call directly.
+              </p>
+
+              {/* FIRST NUMBER */}
+              <div className="flex items-center justify-between bg-[#F0F7FF] rounded-full px-6 py-4 border border-[#265BA6]/10 mb-4">
                 <span className="text-[18px] lg:text-[20px] font-medium text-[#265BA6]">
-                  {phoneNumber}
+                  +91 99019 02808
                 </span>
-                
-                <button 
-                  onClick={handleCopy}
+
+                <button
+                  onClick={() => navigator.clipboard.writeText("+919901902808")}
                   className="p-2 hover:bg-[#265BA6]/10 rounded-full transition-colors relative"
                 >
-                  {copied ? (
-                    <span className="text-green-600 font-bold">✓</span>
-                  ) : (
-                    <svg className="w-6 h-6 text-[#265BA6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                    </svg>
-                  )}
+                  <svg
+                    className="w-6 h-6 text-[#265BA6]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+                    />
+                  </svg>
                 </button>
               </div>
 
-              <a 
-                href={`tel:${phoneNumber.replace(/\s/g, '')}`}
-                className="mt-6 block w-full py-4 bg-[#265BA6] text-white rounded-full font-medium hover:opacity-90 transition-opacity"
+              <a
+                href="tel:+919901902808"
+                className="block w-full py-4 bg-[#265BA6] text-white rounded-full font-medium hover:opacity-90 transition-opacity mb-6"
               >
-                Call Now
+                Call +91 99019 02808
+              </a>
+
+              {/* SECOND NUMBER */}
+              <div className="flex items-center justify-between bg-[#F0F7FF] rounded-full px-6 py-4 border border-[#265BA6]/10 mb-4">
+                <span className="text-[18px] lg:text-[20px] font-medium text-[#265BA6]">
+                  +91 99867 00800
+                </span>
+
+                <button
+                  onClick={() => navigator.clipboard.writeText("+919986700800")}
+                  className="p-2 hover:bg-[#265BA6]/10 rounded-full transition-colors relative"
+                >
+                  <svg
+                    className="w-6 h-6 text-[#265BA6]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <a
+                href="tel:+919986700800"
+                className="block w-full py-4 bg-[#265BA6] text-white rounded-full font-medium hover:opacity-90 transition-opacity"
+              >
+                Call +91 99867 00800
               </a>
             </div>
           </div>
