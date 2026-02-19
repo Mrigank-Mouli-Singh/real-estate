@@ -225,16 +225,15 @@ const handleSubmit = async (e) => {
   const phoneRegex = /^[6-9]\d{9}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Trim values
   const fullName = formData.fullName.trim();
   const phoneNumber = formData.phoneNumber.trim();
   const emailAddress = formData.emailAddress.trim();
   const subject = formData.subject;
-  const message = formData.message.trim();
+  const message = formData.message?.trim() || ""; // optional
 
-  // Required check
-  if (!fullName || !phoneNumber || !emailAddress || !subject || !message) {
-    alert("All fields are required.");
+  // Required fields (message removed)
+  if (!fullName || !phoneNumber || !emailAddress || !subject) {
+    alert("Full name, phone number, email and subject are required.");
     return;
   }
 
@@ -256,12 +255,6 @@ const handleSubmit = async (e) => {
     return;
   }
 
-  // Message validation
-  if (message.length < 10) {
-    alert("Message must be at least 10 characters.");
-    return;
-  }
-
   try {
     setLoading(true);
 
@@ -277,7 +270,7 @@ const handleSubmit = async (e) => {
           phoneNumber,
           emailAddress,
           subject,
-          message,
+          message, // optional
         }),
       }
     );
@@ -288,7 +281,6 @@ const handleSubmit = async (e) => {
       throw new Error(data.error || "Submission failed");
     }
 
-    // Reset form after success
     setFormData({
       fullName: "",
       phoneNumber: "",
@@ -307,6 +299,7 @@ const handleSubmit = async (e) => {
     setLoading(false);
   }
 };
+
 
   return (
     <div id="contact-form" className="flex flex-col items-center w-full px-4">
