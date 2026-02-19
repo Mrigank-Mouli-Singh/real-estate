@@ -415,19 +415,20 @@ const handleSubmit = async (e) => {
           </div>
 
           {/* MESSAGE */}
-          <div>
-            <label className="font-medium text-[18px] lg:text-[24px] leading-[100%] text-black mb-2 lg:mb-3 block">
-              Message
-            </label>
-            <textarea
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-              placeholder="Tell us how we can help you"
-              className="w-full h-[80px] lg:h-[120px] rounded-[20px] lg:rounded-[30px] px-6 py-4 bg-white outline-none resize-none text-[16px] lg:text-[18px] placeholder:text-[#C6C6C6] shadow-[0px_4px_20px_rgba(96,165,250,0.10)] focus:shadow-[0px_4px_25px_rgba(38,91,166,0.20)] transition-all duration-300"
-            />
-          </div>
+<div>
+  <label className="font-medium text-[18px] lg:text-[24px] leading-[100%] text-black mb-2 lg:mb-3 block">
+    Message (Optional)
+  </label>
+  <textarea
+    value={formData.message}
+    onChange={(e) =>
+      setFormData({ ...formData, message: e.target.value })
+    }
+    placeholder="Tell us how we can help you (optional)"
+    className="w-full h-[80px] lg:h-[120px] rounded-[20px] lg:rounded-[30px] px-6 py-4 bg-white outline-none resize-none text-[16px] lg:text-[18px] placeholder:text-[#C6C6C6] shadow-[0px_4px_20px_rgba(96,165,250,0.10)] focus:shadow-[0px_4px_25px_rgba(38,91,166,0.20)] transition-all duration-300"
+  />
+</div>
+
 
           {/* BUTTON */}
           <button
