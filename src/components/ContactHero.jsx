@@ -16,7 +16,7 @@ export default function ContactHero() {
             Contact Us
           </h1>
 
-          <p className="font-manrope font-medium text-[16px] leading-relaxed lg:text-[32px] lg:leading-[32px] text-black/50 mt-4 lg:mt-[60px] max-w-[340px] lg:max-w-[701px]">
+          <p className="font-manrope font-medium text-[16px] leading-relaxed lg:text-[32px] lg:leading-normal text-black/50 mt-4 lg:mt-[40px] max-w-[340px] lg:max-w-[701px]">
             Get in touch with our team for expert guidance and personalized real
             estate support. We’re here to help you make confident, well-informed
             decisions.
