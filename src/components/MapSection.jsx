@@ -1,7 +1,6 @@
 export default function MapSection() {
   return (
     <div className="flex flex-col items-center w-full">
-      
       {/* Section Title */}
       <h2 className="font-manrope font-medium text-[28px] lg:text-[40px] leading-tight text-black mb-6 text-center">
         Find us here
@@ -15,7 +14,7 @@ export default function MapSection() {
         }}
       >
         <iframe
-          src="https://www.google.com/maps?q=709-A,+Pratap+Nagar,+C.A.D.+Circle,+Dadabari,+Kota,+324009&output=embed"
+          src="https://www.google.com/maps?q=13.0568889,77.5095278&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}
@@ -26,7 +25,6 @@ export default function MapSection() {
           title="Office Location Map"
         ></iframe>
       </div>
-
     </div>
   );
 }
